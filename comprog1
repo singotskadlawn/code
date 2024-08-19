@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+  
+  int array[5];
+  int i, size, sum = 0;
+  
+    printf("Enter the size of the array (up to 5): ");
+    scanf("%d", &size);
+  
+  if (size > 10 || size <= 0) {
+        printf("Invalid size. Please enter a size between 1 and 5.\n");
+        return 1;
+    }
+    
+     printf("Enter %d integers:\n", size);
+    for (i = 0; i < size; i++) {
+        scanf("%d", &array[i]);
+    }
+    
+    printf("Array elements at odd indices: ");
+    for (i = 1; i < size; i += 2) {
+        printf("%d ", array[i]);
+        sum += array[i];
+    }
+
+    printf("\nSum of integers located at odd indices: %d\n", sum);
+
+    return 0;
+}
